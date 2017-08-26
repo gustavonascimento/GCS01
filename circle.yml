@@ -4,5 +4,6 @@ machine:
 
 dependencies:
   post:
+    - cd django-basic
     - python manage.py migrate
     - python manage.py test
