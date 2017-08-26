@@ -7,3 +7,11 @@ script:
 - python django-basic/manage.py migrate
 - python django-basic/manage.py test
 #- flake8 --exclude django-basic/polls/migrations/,manage.py  .
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 3baacf22-d059-4cb4-bf84-24783559744a
+  app: gcs01-gustavonascimento-travis
+  on:
+    repo: gustavonascimento/GCS01
