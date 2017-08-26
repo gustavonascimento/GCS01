@@ -4,7 +4,6 @@ machine:
 
 dependencies:
   post:
-    - cd django-basic
     - pip3 install -U -r requirements.txt
-    - python manage.py migrate
-    - python manage.py test
+    - python django-basic/manage.py migrate
+    - python django-basic/manage.py test
