@@ -6,4 +6,4 @@ python:
 script:
 - python django-basic/manage.py migrate
 - python django-basic/manage.py test
-- flake8 --exclude polls/migrations/,manage.py  .
+- flake8 --exclude django-basic/polls/migrations/,manage.py  .
