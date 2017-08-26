@@ -4,5 +4,5 @@ machine:
 
 dependencies:
   post:
-    - python django-basic/manage.py migrate
-    - python django-basic/manage.py test
+    - python manage.py migrate
+    - python manage.py test
