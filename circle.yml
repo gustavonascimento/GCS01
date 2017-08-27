@@ -7,5 +7,5 @@ dependencies:
     - sudo apt -y update
     - sudo apt -y install libjpeg-dev libjpeg8-dev zlib1g-dev libfreetype6-dev libwebp-dev python3-pip
     - pip3 install -r requirements.txt
-    - python3 manage.py makemigrations
-    - python3 manage.py migrate
+    - python3 django-basic/manage.py makemigrations
+    - python3 django-basic/manage.py migrate
