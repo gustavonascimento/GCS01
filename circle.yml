@@ -28,7 +28,7 @@ steps:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test
+            python django-basic/manage.py test
             flake8 --exclude polls/migrations/,manage.py,./venv/  .
       - store_artifacts:
           path: test-reports
