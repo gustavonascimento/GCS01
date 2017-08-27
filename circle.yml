@@ -4,6 +4,8 @@ machine:
 
 dependencies:
   post:
-    - pip3 install -U -r requirements.txt
-    - python django-basic/manage.py migrate
-    - python django-basic/manage.py test
+    - sudo apt -y update
+    - sudo apt -y install libjpeg-dev libjpeg8-dev zlib1g-dev libfreetype6-dev libwebp-dev python3-pip
+    - pip3 install -r requirements.txt
+    - python3 manage.py makemigrations
+    - python3 manage.py migrate
