@@ -45,7 +45,7 @@ jobs:
             . venv/bin/activate
             python django-basic/manage.py migrate
             python django-basic/manage.py test
-            flake8 --exclude polls/migrations/,manage.py,./venv/  .
+  #          flake8 --exclude polls/migrations/,manage.py,./venv/  .
       - store_artifacts:
           path: test-reports
           destination: test-reports
