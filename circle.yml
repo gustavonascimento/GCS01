@@ -2,34 +2,8 @@ machine:
   python:
     version: 3.6.2
 
-steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
-
-      # run tests!
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            python django-basic/manage.py test
-            flake8 --exclude polls/migrations/,manage.py,./venv/  .
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+dependencies:
+  post:
+    - pip3 install -U -r requirements.txt
+    - python manage.py migrate
+    - python manage.py test
